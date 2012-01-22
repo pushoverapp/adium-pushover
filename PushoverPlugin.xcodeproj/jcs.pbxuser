@@ -1,0 +1,208 @@
+// !$*UTF8*$!
+{
+	010104F012E0DA8700CE0DC4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 32DBCF630370AF2F00C91783 /* PushoverPlugin_Prefix.pch */;
+		name = "PushoverPlugin_Prefix.pch: 2";
+		rLen = 0;
+		rLoc = 43;
+		rType = 0;
+		vrLen = 83;
+		vrLoc = 0;
+	};
+	010104F112E0DA8700CE0DC4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 012E22A312C98DEF001DB640 /* PushoverDetailPane.m */;
+		name = "PushoverDetailPane.m: 7";
+		rLen = 0;
+		rLoc = 144;
+		rType = 0;
+		vrLen = 690;
+		vrLoc = 0;
+	};
+	0101055712E38ACA00CE0DC4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A7996F930E79D70B0000BA6C /* PushoverPlugin.h */;
+		name = "PushoverPlugin.h: 12";
+		rLen = 0;
+		rLoc = 260;
+		rType = 0;
+		vrLen = 369;
+		vrLoc = 0;
+	};
+	0101055812E38ACA00CE0DC4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A7996F940E79D70B0000BA6C /* PushoverPlugin.m */;
+		name = "PushoverPlugin.m: 115";
+		rLen = 100;
+		rLoc = 3088;
+		rType = 0;
+		vrLen = 788;
+		vrLoc = 3044;
+	};
+	0101055A12E4E7A900CE0DC4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A7996F940E79D70B0000BA6C /* PushoverPlugin.m */;
+		name = "PushoverPlugin.m: 143";
+		rLen = 0;
+		rLoc = 3928;
+		rType = 0;
+		vrLen = 1507;
+		vrLoc = 3851;
+	};
+	012E1A8612C97C5E001DB640 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	012E1A8712C97C5E001DB640 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	012E22A212C98DEF001DB640 /* PushoverDetailPane.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1028, 433}}";
+			sepNavSelRange = "{136, 0}";
+			sepNavVisRange = "{0, 173}";
+		};
+	};
+	012E22A312C98DEF001DB640 /* PushoverDetailPane.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1028, 418}}";
+			sepNavSelRange = "{144, 0}";
+			sepNavVisRange = "{0, 690}";
+			sepNavWindowFrame = "{{15, 55}, {915, 686}}";
+		};
+	};
+	01FFC67B12C9CCF900EFFBD0 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D5B49B7048680CD000E48DA /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			NSPrincipalClass,
+		);
+		name = "/Users/jcs/code/adium-pipemessage/Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775808;
+	};
+	01FFC67C12C9CCF900EFFBD0 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 012E25CE12C995CD001DB640 /* TerminalIcon.png */;
+	};
+	01FFC67D12C9CCF900EFFBD0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 012E22A212C98DEF001DB640 /* PushoverDetailPane.h */;
+		name = "PushoverDetailPane.h: 6";
+		rLen = 0;
+		rLoc = 136;
+		rType = 0;
+		vrLen = 173;
+		vrLoc = 0;
+	};
+	089C1669FE841209C02AAC07 /* Project object */ = {
+		activeBuildConfigurationName = Release;
+		activeTarget = 8D5B49AC048680CD000E48DA /* PushoverPlugin */;
+		addToTargets = (
+			8D5B49AC048680CD000E48DA /* PushoverPlugin */,
+		);
+		codeSenseManager = 012E1A8712C97C5E001DB640 /* Code sense */;
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					850,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXTargetDataSource.PBXTargetDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					810,
+					60,
+					20,
+					48,
+					43,
+					43,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXTargetDataSource_PrimaryAttribute,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 316723173;
+			PBXWorkspaceStateSaveDate = 316723173;
+		};
+		perUserProjectItems = {
+			010104F012E0DA8700CE0DC4 /* PBXTextBookmark */ = 010104F012E0DA8700CE0DC4 /* PBXTextBookmark */;
+			010104F112E0DA8700CE0DC4 /* PBXTextBookmark */ = 010104F112E0DA8700CE0DC4 /* PBXTextBookmark */;
+			0101055712E38ACA00CE0DC4 /* PBXTextBookmark */ = 0101055712E38ACA00CE0DC4 /* PBXTextBookmark */;
+			0101055812E38ACA00CE0DC4 /* PBXTextBookmark */ = 0101055812E38ACA00CE0DC4 /* PBXTextBookmark */;
+			0101055A12E4E7A900CE0DC4 /* PBXTextBookmark */ = 0101055A12E4E7A900CE0DC4 /* PBXTextBookmark */;
+			01FFC67B12C9CCF900EFFBD0 /* PlistBookmark */ = 01FFC67B12C9CCF900EFFBD0 /* PlistBookmark */;
+			01FFC67C12C9CCF900EFFBD0 /* PBXBookmark */ = 01FFC67C12C9CCF900EFFBD0 /* PBXBookmark */;
+			01FFC67D12C9CCF900EFFBD0 /* PBXTextBookmark */ = 01FFC67D12C9CCF900EFFBD0 /* PBXTextBookmark */;
+		};
+		sourceControlManager = 012E1A8612C97C5E001DB640 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	32DBCF630370AF2F00C91783 /* PushoverPlugin_Prefix.pch */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1028, 418}}";
+			sepNavSelRange = "{43, 0}";
+			sepNavVisRange = "{0, 83}";
+			sepNavWindowFrame = "{{61, 13}, {915, 686}}";
+		};
+	};
+	8D5B49AC048680CD000E48DA /* PushoverPlugin */ = {
+		activeExec = 0;
+	};
+	8D5B49B7048680CD000E48DA /* Info.plist */ = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{15, 55}, {915, 686}}";
+		};
+	};
+	A7996F930E79D70B0000BA6C /* PushoverPlugin.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1028, 418}}";
+			sepNavSelRange = "{260, 0}";
+			sepNavVisRange = "{0, 369}";
+		};
+	};
+	A7996F940E79D70B0000BA6C /* PushoverPlugin.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1066, 2366}}";
+			sepNavSelRange = "{4917, 0}";
+			sepNavVisRange = "{4080, 510}";
+			sepNavWindowFrame = "{{38, 34}, {915, 686}}";
+		};
+	};
+}
