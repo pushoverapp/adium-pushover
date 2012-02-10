@@ -1,5 +1,6 @@
 #import "PushoverPlugin.h"
 #import "PushoverDetailPane.h"
+#import "NSAttributedString+Hyperlink.h"
 
 @implementation PushoverDetailPane
 
@@ -23,6 +24,17 @@
 	when_locked = [(NSNumber *)[inDetails objectForKey:KEY_ONLY_WHEN_LOCKED]
 		boolValue];
 	[only_when_locked setState:when_locked];
+	
+	[pushover_link_label setAllowsEditingTextAttributes: YES];
+	[pushover_link_label setSelectable: YES];
+ 	
+	NSMutableAttributedString* string = [[NSMutableAttributedString alloc]
+		initWithString:@"Find your user key or create an account at "];
+	NSURL* url = [NSURL URLWithString:@"https://pushover.net/"];
+
+	[string appendAttributedString:[NSAttributedString hyperlinkFromString:@"https://pushover.net/"
+		withURL:url]];
+	[pushover_link_label setAttributedStringValue: string];
 
 	[super configureForActionDetails:inDetails listObject:inObject];
 }

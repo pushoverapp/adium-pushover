@@ -10,7 +10,7 @@
 
 /* token for adium app */
 #define PUSHOVER_API_TOKEN	"IyulbcJ6RTdTfHrDtwhzPKFjiSiZyD"
-#define PUSHOVER_API_URL	"https://api.pushover.net/1/messages/create"
+#define PUSHOVER_API_URL	"https://api.pushover.net/1/messages.json"
 
 @protocol AIContentFilter;
 

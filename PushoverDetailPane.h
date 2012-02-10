@@ -5,6 +5,7 @@
 @interface PushoverDetailPane : AIActionDetailsPane {
 	IBOutlet	NSTextField	*pushover_key;
 	IBOutlet	NSTextField	*pushover_device_name;
+	IBOutlet	NSTextField	*pushover_link_label;
 	IBOutlet	NSButton	*only_when_away;
 	IBOutlet	NSButton	*only_when_locked;
 

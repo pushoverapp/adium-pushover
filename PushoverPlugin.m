@@ -3,7 +3,7 @@
 #import <AIUtilities/AIImageAdditions.h>
 #import <Adium/AIContentObject.h>
 #import <Adium/AIListContact.h>
-#import <pthread.h>
+#import <Adium/ESDebugAILog.h>
 
 #define PUSHOVER_IDENTIFIER	@"Pushover"
 #define	PUSHOVER_DESC		@"Forward to Pushover"
@@ -24,8 +24,17 @@
 		name:@"com.apple.screensaver.didstart"
 		object:nil];
 	[[NSDistributedNotificationCenter defaultCenter] addObserver:self
+		selector:@selector(screenSaverDidStart)
+		name:@"com.apple.screenIsLocked"
+		object:nil];
+
+	[[NSDistributedNotificationCenter defaultCenter] addObserver:self
 		selector:@selector(screenSaverDidStop)
 		name:@"com.apple.screensaver.didstop"
+		object:nil];
+	[[NSDistributedNotificationCenter defaultCenter] addObserver:self
+		selector:@selector(screenSaverDidStop)
+		name:@"com.apple.screenIsUnlocked"
 		object:nil];
 }
 
@@ -95,7 +104,7 @@
 
 - (NSString *)pluginURL
 {
-	return @"https://pushover.net/plugins/adium/";
+	return @"https://pushover.net/";
 }
 
 /* screen saver callbacks */
@@ -176,14 +185,29 @@
 	/* now that we have our title and message, find out if we're actually
 	 * supposed to do anything with it */
 
-	if ((when_away && !is_away) || (when_locked && !screen_saver_running))
-		/* don't send */
-		;
-	else
+	if (when_away && !is_away)
+		AILog(@"%@: Only sending while away; not away", self);
+	else if (when_locked && !screen_saver_running)
+		AILog(@"%@: Only sending while screen locked; screen not "
+			"locked", self);
+	else {
+		AILog(@"%@: [%@, %@] [%@, %@] Forwarding to %@ (%@)",
+			self,
+			(when_away ? @"only when away" : @"always"),
+			(is_away ? @"currently away" : @"not away"),
+			(when_locked ? @"only when locked" : @"always"),
+			(screen_saver_running ? @"currently locked" :
+				@"not locked"),
+			key,
+			(device_name != nil && [device_name length] > 0 ?
+				[NSString stringWithFormat:@"device %@",
+				device_name] : @"all devices"));
+
 		[self pushMessage:message
 			withTitle:title
 			to:key
 			forDevice:device_name];
+	}
 
 	return YES;
 }
@@ -246,7 +270,7 @@
 {
 	NSString *result = (NSString *)CFURLCreateStringByAddingPercentEscapes(
 		kCFAllocatorDefault, (CFStringRef)str, NULL,
-		CFSTR("?=&+"), kCFStringEncodingUTF8);
+		CFSTR("!$&'()*+,-./:;=?@_~"), kCFStringEncodingUTF8);
 	return [result autorelease];
 }
 

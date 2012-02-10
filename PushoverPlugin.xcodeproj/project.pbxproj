@@ -12,6 +12,7 @@
 		012619521470CC7F00575F84 /* Adium.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 012619511470CC7F00575F84 /* Adium.framework */; };
 		012E22A412C98DEF001DB640 /* PushoverDetailPane.m in Sources */ = {isa = PBXBuildFile; fileRef = 012E22A312C98DEF001DB640 /* PushoverDetailPane.m */; };
 		012E241312C98F85001DB640 /* Pushover.nib in Resources */ = {isa = PBXBuildFile; fileRef = 012E241212C98F85001DB640 /* Pushover.nib */; };
+		019CE1B414D61F5200F12F6B /* NSAttributedString+Hyperlink.m in Sources */ = {isa = PBXBuildFile; fileRef = 019CE1B314D61F5200F12F6B /* NSAttributedString+Hyperlink.m */; };
 		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,8 @@
 		012E22A212C98DEF001DB640 /* PushoverDetailPane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushoverDetailPane.h; sourceTree = "<group>"; };
 		012E22A312C98DEF001DB640 /* PushoverDetailPane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushoverDetailPane.m; sourceTree = "<group>"; };
 		012E241212C98F85001DB640 /* Pushover.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = Pushover.nib; sourceTree = "<group>"; };
+		019CE1B214D61F5200F12F6B /* NSAttributedString+Hyperlink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+Hyperlink.h"; sourceTree = "<group>"; };
+		019CE1B314D61F5200F12F6B /* NSAttributedString+Hyperlink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+Hyperlink.m"; sourceTree = "<group>"; };
 		089C1672FE841209C02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		089C167FFE841241C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
@@ -82,6 +85,8 @@
 				012E22A312C98DEF001DB640 /* PushoverDetailPane.m */,
 				0122166A14CB95B400491D28 /* PushoverPlugin.h */,
 				0122166B14CB95B400491D28 /* PushoverPlugin.m */,
+				019CE1B214D61F5200F12F6B /* NSAttributedString+Hyperlink.h */,
+				019CE1B314D61F5200F12F6B /* NSAttributedString+Hyperlink.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -187,6 +192,7 @@
 			files = (
 				012E22A412C98DEF001DB640 /* PushoverDetailPane.m in Sources */,
 				0122166C14CB95B400491D28 /* PushoverPlugin.m in Sources */,
+				019CE1B414D61F5200F12F6B /* NSAttributedString+Hyperlink.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
