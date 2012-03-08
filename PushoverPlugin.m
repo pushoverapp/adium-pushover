@@ -217,13 +217,14 @@
 	to:(NSString *)user_key
 	forDevice:(NSString *)device_name
 {
-	NSString *token = [NSString stringWithFormat:@"%s",
-		PUSHOVER_API_TOKEN];
+	NSString *token = [NSString stringWithFormat:@"%s", PUSHOVER_API_TOKEN];
+	NSString *timestamp = [NSString stringWithFormat:@"%d", (long)[[NSDate
+		date] timeIntervalSince1970]];
 
 	NSArray *keys = [NSArray arrayWithObjects:
-		@"token", @"user", @"device", @"title", @"message", nil];
+		@"token", @"user", @"device", @"timestamp", @"title", @"message", nil];
 	NSArray *values = [NSArray arrayWithObjects:
-		token, user_key, device_name, title, message, nil];
+		token, user_key, device_name, timestamp, title, message, nil];
 	NSDictionary *post = [NSDictionary dictionaryWithObjects:values
 		forKeys:keys];
 	NSString *postString = [self URLEncodedFromDictionary:post];
