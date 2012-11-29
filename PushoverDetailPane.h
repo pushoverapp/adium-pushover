@@ -8,10 +8,14 @@
 	IBOutlet	NSTextField	*pushover_link_label;
 	IBOutlet	NSButton	*only_when_away;
 	IBOutlet	NSButton	*only_when_locked;
+	IBOutlet	NSPopUpButton	*sound;
 
 	BOOL		when_away;
 	BOOL		when_locked;
 }
+
++ (void)fetchSoundList;
++ (NSDictionary *)soundList;
 
 - (IBAction)awayClicked:(id)sender;
 - (IBAction)lockedClicked:(id)sender;

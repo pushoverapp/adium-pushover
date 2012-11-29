@@ -4,6 +4,7 @@
 #import <Adium/AIContentObject.h>
 #import <Adium/AIListContact.h>
 #import <Adium/ESDebugAILog.h>
+#import "JSONKit.h"
 
 #define PUSHOVER_IDENTIFIER	@"Pushover"
 #define	PUSHOVER_DESC		@"Forward to Pushover"
@@ -16,7 +17,7 @@
 {
 	[adium.contactAlertsController
 		registerActionID:PUSHOVER_IDENTIFIER withHandler:self];
-	
+
 	/* register for screensaver events */
 	screen_saver_running = NO;
 	[[NSDistributedNotificationCenter defaultCenter] addObserver:self
@@ -94,7 +95,7 @@
 
 - (NSString *)pluginVersion
 {
-	return @"1.1";
+	return @"1.2";
 }
 
 - (NSString *)pluginDescription
@@ -148,6 +149,7 @@
 		objectForKey:KEY_ONLY_WHEN_AWAY] boolValue];
 	BOOL when_locked = [(NSNumber *)[details
 		objectForKey:KEY_ONLY_WHEN_LOCKED] boolValue];
+	NSString *sound = [details objectForKey:KEY_PUSHOVER_SOUND];
 
 	/* extract out account info and account away status */
 	if ([adium.contactAlertsController isMessageEvent:eventID] &&
@@ -191,7 +193,7 @@
 		AILog(@"%@: Only sending while screen locked; screen not "
 			"locked", self);
 	else {
-		AILog(@"%@: [%@, %@] [%@, %@] Forwarding to %@ (%@)",
+		AILog(@"%@: [%@, %@] [%@, %@] Forwarding to %@ (%@) (%@)",
 			self,
 			(when_away ? @"only when away" : @"always"),
 			(is_away ? @"currently away" : @"not away"),
@@ -201,12 +203,14 @@
 			key,
 			(device_name != nil && [device_name length] > 0 ?
 				[NSString stringWithFormat:@"device %@",
-				device_name] : @"all devices"));
+				device_name] : @"all devices"),
+			sound);
 
 		[self pushMessage:message
 			withTitle:title
 			to:key
-			forDevice:device_name];
+			forDevice:device_name
+			withSound:sound];
 	}
 
 	return YES;
@@ -216,24 +220,34 @@
 	withTitle:(NSString *)title
 	to:(NSString *)user_key
 	forDevice:(NSString *)device_name
+	withSound:(NSString *)sound
 {
 	NSString *token = [NSString stringWithFormat:@"%s", PUSHOVER_API_TOKEN];
-	NSString *timestamp = [NSString stringWithFormat:@"%d", (long)[[NSDate
+	NSString *timestamp = [NSString stringWithFormat:@"%ld", (long)[[NSDate
 		date] timeIntervalSince1970]];
 
-	NSArray *keys = [NSArray arrayWithObjects:
-		@"token", @"user", @"device", @"timestamp", @"title", @"message", nil];
-	NSArray *values = [NSArray arrayWithObjects:
-		token, user_key, device_name, timestamp, title, message, nil];
-	NSDictionary *post = [NSDictionary dictionaryWithObjects:values
-		forKeys:keys];
+	NSMutableDictionary *post = [NSMutableDictionary dictionaryWithCapacity:1];
+
+	[post setObject:token forKey:@"token"];
+	[post setObject:user_key forKey:@"user"];
+	[post setObject:device_name forKey:@"device"];
+	[post setObject:timestamp forKey:@"timestamp"];
+
+	[post setObject:message forKey:@"message"];
+
+	if (title != nil && [title length] > 0)
+		[post setObject:title forKey:@"title"];
+	
+	if (sound != nil && [sound length] > 0)
+		[post setObject:sound forKey:@"sound"];
+
 	NSString *postString = [self URLEncodedFromDictionary:post];
-	NSString *postLength = [NSString stringWithFormat:@"%d",
+	NSString *postLength = [NSString stringWithFormat:@"%lu",
 		[postString length]];
 
 	NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] init]
 		autorelease];
-	[request setURL:[NSURL URLWithString:@"" PUSHOVER_API_URL]];
+	[request setURL:[NSURL URLWithString:@"" PUSHOVER_API_MESSAGE_URL]];
 	[request setHTTPMethod:@"POST"];
 	[request setValue:postLength forHTTPHeaderField:@"Content-Length"];
 	[request setValue:@"application/x-www-form-urlencoded"
