@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		0122166C14CB95B400491D28 /* PushoverPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 0122166B14CB95B400491D28 /* PushoverPlugin.m */; };
 		0122166E14CB96E100491D28 /* PushoverIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0122166D14CB96E100491D28 /* PushoverIcon.png */; };
-		012619521470CC7F00575F84 /* Adium.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 012619511470CC7F00575F84 /* Adium.framework */; };
 		012E22A412C98DEF001DB640 /* PushoverDetailPane.m in Sources */ = {isa = PBXBuildFile; fileRef = 012E22A312C98DEF001DB640 /* PushoverDetailPane.m */; };
 		012E241312C98F85001DB640 /* Pushover.nib in Resources */ = {isa = PBXBuildFile; fileRef = 012E241212C98F85001DB640 /* Pushover.nib */; };
 		019CE1B414D61F5200F12F6B /* NSAttributedString+Hyperlink.m in Sources */ = {isa = PBXBuildFile; fileRef = 019CE1B314D61F5200F12F6B /* NSAttributedString+Hyperlink.m */; };
+		01B4215215097C6D0013C16F /* Adium.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01B4215115097C6D0013C16F /* Adium.framework */; };
 		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
 
@@ -20,12 +20,12 @@
 		0122166A14CB95B400491D28 /* PushoverPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushoverPlugin.h; sourceTree = "<group>"; };
 		0122166B14CB95B400491D28 /* PushoverPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushoverPlugin.m; sourceTree = "<group>"; };
 		0122166D14CB96E100491D28 /* PushoverIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PushoverIcon.png; sourceTree = "<group>"; };
-		012619511470CC7F00575F84 /* Adium.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Adium.framework; path = ../adium/build/Debug/Adium.framework; sourceTree = "<group>"; };
 		012E22A212C98DEF001DB640 /* PushoverDetailPane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushoverDetailPane.h; sourceTree = "<group>"; };
 		012E22A312C98DEF001DB640 /* PushoverDetailPane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushoverDetailPane.m; sourceTree = "<group>"; };
 		012E241212C98F85001DB640 /* Pushover.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = Pushover.nib; sourceTree = "<group>"; };
 		019CE1B214D61F5200F12F6B /* NSAttributedString+Hyperlink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+Hyperlink.h"; sourceTree = "<group>"; };
 		019CE1B314D61F5200F12F6B /* NSAttributedString+Hyperlink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+Hyperlink.m"; sourceTree = "<group>"; };
+		01B4215115097C6D0013C16F /* Adium.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Adium.framework; path = /Applications/Adium.app/Contents/Frameworks/Adium.framework; sourceTree = "<absolute>"; };
 		089C1672FE841209C02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		089C167FFE841241C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
@@ -39,8 +39,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01B4215215097C6D0013C16F /* Adium.framework in Frameworks */,
 				8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */,
-				012619521470CC7F00575F84 /* Adium.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,7 +94,7 @@
 		1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				012619511470CC7F00575F84 /* Adium.framework */,
+				01B4215115097C6D0013C16F /* Adium.framework */,
 				1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */,
 			);
 			name = "Linked Frameworks";
@@ -202,14 +202,14 @@
 		1DEB913B08733D840010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../adium/build/Release\"",
-					"\"$(SYSTEM_APPS_DIR)/Adium.app/Contents/Frameworks\"",
-					"\"$(SRCROOT)/../adium/build/Debug\"/**",
+					"\"$(SRCROOT)/../adium/Frameworks\"",
+					"\"$(SYSTEM_APPS_DIR)/Adium.app/Contents/Frameworks\"/**",
+					"\"$(SRCROOT)/../adium/build/Debug\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
@@ -220,6 +220,7 @@
 				INSTALL_PATH = "$(HOME)/Library/Application Support/Adium 2.0/PlugIns/";
 				PRODUCT_NAME = PushoverPlugin;
 				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../adium/Frameworks/Adium Framework\"/** \"$(SRCROOT)/../adium/Frameworks/AIUtilities Framework\"/** \"$(SRCROOT)/../adium\"/**";
 				WRAPPER_EXTENSION = AdiumPlugin;
 			};
 			name = Debug;
@@ -227,14 +228,14 @@
 		1DEB913C08733D840010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../adium/build/Release\"",
-					"\"$(SYSTEM_APPS_DIR)/Adium.app/Contents/Frameworks\"",
-					"\"$(SRCROOT)/../adium/build/Debug\"/**",
+					"\"$(SRCROOT)/../adium/Frameworks\"",
+					"\"$(SYSTEM_APPS_DIR)/Adium.app/Contents/Frameworks\"/**",
+					"\"$(SRCROOT)/../adium/build/Debug\"",
 				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -243,6 +244,7 @@
 				INSTALL_PATH = "$(HOME)/Library/Application Support/Adium 2.0/PlugIns/";
 				PRODUCT_NAME = PushoverPlugin;
 				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../adium/Frameworks/Adium Framework\"/** \"$(SRCROOT)/../adium/Frameworks/AIUtilities Framework\"/** \"$(SRCROOT)/../adium\"/**";
 				WRAPPER_EXTENSION = AdiumPlugin;
 			};
 			name = Release;
