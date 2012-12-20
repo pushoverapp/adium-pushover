@@ -218,6 +218,7 @@
 				GCC_PREFIX_HEADER = PushoverPlugin_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Application Support/Adium 2.0/PlugIns/";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = PushoverPlugin;
 				SDKROOT = macosx;
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../adium/Frameworks/Adium Framework\"/** \"$(SRCROOT)/../adium/Frameworks/AIUtilities Framework\"/** \"$(SRCROOT)/../adium\"/**";
@@ -242,6 +243,7 @@
 				GCC_PREFIX_HEADER = PushoverPlugin_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Application Support/Adium 2.0/PlugIns/";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = PushoverPlugin;
 				SDKROOT = macosx;
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../adium/Frameworks/Adium Framework\"/** \"$(SRCROOT)/../adium/Frameworks/AIUtilities Framework\"/** \"$(SRCROOT)/../adium\"/**";
