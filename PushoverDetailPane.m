@@ -95,8 +95,8 @@ static NSMutableDictionary *cachedSoundList;
 	cachedSoundList = [[NSMutableDictionary alloc] initWithCapacity:1];
 
 	NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL
-		URLWithString:[NSString stringWithFormat:@"%s",
-		PUSHOVER_API_SOUNDS_URL]]];
+		URLWithString:[NSString stringWithFormat:@"%s?token=%s",
+		PUSHOVER_API_SOUNDS_URL, PUSHOVER_API_TOKEN]]];
 	NSData *d = [NSURLConnection sendSynchronousRequest:request
 		returningResponse:&response error:&error];
 
