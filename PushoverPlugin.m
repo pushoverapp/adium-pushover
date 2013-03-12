@@ -237,7 +237,7 @@
 
 	if (title != nil && [title length] > 0)
 		[post setObject:title forKey:@"title"];
-	
+
 	if (sound != nil && [sound length] > 0)
 		[post setObject:sound forKey:@"sound"];
 
@@ -296,19 +296,19 @@
 {
 	[responseData setLength:0];
 }
- 
+
 - (void)connection:(NSURLConnection *)connection
 	didReceiveData:(NSData *)data
 {
 	[responseData appendData:data];
 }
- 
+
 - (void)connection:(NSURLConnection *)connection
 	didFailWithError:(NSError *)error
 {
 	NSLog(@"Failed POSTing to Pushover: %@", error);
 }
- 
+
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
 	/* TODO: release responseData? */

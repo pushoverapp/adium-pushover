@@ -9,7 +9,7 @@ static NSMutableDictionary *cachedSoundList;
 @implementation PushoverDetailPane
 
 - (NSString *)nibName {
-    return @"Pushover";    
+    return @"Pushover";
 }
 
 - (void)configureForActionDetails:(NSDictionary *)inDetails
@@ -28,10 +28,10 @@ static NSMutableDictionary *cachedSoundList;
 	when_locked = [(NSNumber *)[inDetails objectForKey:KEY_ONLY_WHEN_LOCKED]
 		boolValue];
 	[only_when_locked setState:when_locked];
-	
+
 	[pushover_link_label setAllowsEditingTextAttributes: YES];
 	[pushover_link_label setSelectable: YES];
- 	
+
 	NSMutableAttributedString* string = [[NSMutableAttributedString alloc]
 		initWithString:@"Find your user key or create an account at "];
 	NSURL* url = [NSURL URLWithString:@"https://pushover.net/"];
